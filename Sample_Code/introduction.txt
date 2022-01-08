@@ -1,1 +1,17 @@
 Here are some sample codes to play around
+
+
+
+1. Neural Style Transfer (Component 2)
+---------------------------------------
+- Download the folder onto your local machine
+- All the image files are in the data folder (content-images and style-images). Your result AI art will be saved to output-image folder
+- This sample using the vgg model from Pytorch library. The code of this vgg NN model is in the model folder.
+- The execution code is in the NST.py file. You can run this code using VSCode or any other development tools.
+- This sample code is from example here https://github.com/nazianafis/Neural-Style-Transfer
+- This code execute the whole set of operations: input the images, transform the image, build the output directory, logic of the loss function for each model, Neural Style Transfer model. 
+- By default, the code is set to run with 1000 iterations. You can change the number of iterations you want by updating it at line # 163. The more iteration the better since it will help the model to learn and reduce the loss (gradient descent optimization). The result will be better with more iteration. The only dow side it that it will take longer to run.
+- You can choose which content images and style images from the data folder to be used in this Neural Style Transfer, you can specify the name of the images on line # 184 and line # 185
+
+
+
