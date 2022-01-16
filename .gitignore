@@ -1,0 +1,5 @@
+.DS_Store
+data/.DS_Store
+notebooks/.ipynb_checkpoints/
+website/django_project/.DS_Store
+website/django_project/static/.DS_Store
