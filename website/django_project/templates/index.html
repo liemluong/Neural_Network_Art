@@ -36,22 +36,47 @@
         <form class="toolbox p-4 rounded">
           <h2>Toolbox</h2>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="pattern" class="form-label">Pattern<span id="patternHelp" class="form-text text-secondary ">Choose a pattern.</span></label>
+            <div>
+              <span class="tile">
+                <img src="/static/patterns/checkered.png" alt="checkered" class="tile-img">
+                <p class="text-secondary">checkered</p>
+              </span>
+              <span class="tile">
+                <img src="/static/patterns/dots.png" alt="dots" class="tile-img">
+                <p class="text-secondary">dots</p>
+              </span>
+              <span class="tile"> 
+                <img src="/static/patterns/floral.jpeg" alt="floral" class="tile-img">
+                <p class="text-secondary">floral</p>
+              </span>
+              <span class="tile">
+                <img src="/static/patterns/solid.png" alt="solid" class="tile-img">
+                <p class="text-secondary">solid</p>
+              </span>
+              <span class="tile">
+                <img src="/static/patterns/stripes.jpeg" alt="stripes" class="tile-img">
+                <p class="text-secondary">stripes</p>
+              </span>
+              <span class="tile">
+                <img src="/static/patterns/zigzag.jpeg" alt="zigzag" class="tile-img">
+                <p class="text-secondary">zig zag</p>
+              </span>
+            </div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="item" class="form-label">Item</label>
             <input type="password" class="form-control" id="exampleInputPassword1">
+            <div id="itemHelp" class="form-text text-secondary">Choose an item.</div>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Generate</button>
         </form>
-        <div id="pattern-preview" class="border border-secondary shadow w-50 h-100 rounded">
-        </div>
+          <div id="pattern-preview" class="border border-secondary shadow w-50 h-100 rounded">
+            <div class="pattern-preview-header d-flex flex-row justify-content-between position-relative">
+              <h2>Pattern Preview</h2>
+              <button type="button" class="btn btn-secondary">Download</button>
+            </div>
+          </div>
       </div>
     </div>  
 

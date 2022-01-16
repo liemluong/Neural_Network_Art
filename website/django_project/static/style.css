@@ -5,3 +5,17 @@
 .logo {
     height: 5rem;
 }
+
+.pattern-preview-header {
+    top: -4rem;
+}
+
+.tile-img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.tile {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
