@@ -9,3 +9,6 @@ def index(request):
 
 def tool(request):
     return render(request, 'tool.html', {})
+
+def about(request):
+    return render(request, 'about.html', {})
