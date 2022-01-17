@@ -1,4 +1,4 @@
-.toolbox {
+.toolbox, .home {
     background-color: #FAEDAA;
 }
 
@@ -18,4 +18,13 @@
 .tile {
     display: inline-block;
     margin-right: 0.5rem;
+    text-align: center!important;
+}
+
+.content-section {
+    margin-top: 5rem;
+}
+
+.navbar {
+    background-color: #AFCBFF;
 }
