@@ -18,7 +18,7 @@
               <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="tool">Tool</a>
+              <a class="nav-link active" href="tool">Pattern Generator</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about">About</a>
@@ -30,95 +30,99 @@
         </button>
       </div>
     </nav>
-    <div class="d-flex flex-column vh-100 justify-content-center content-section">
+    <div class="d-flex flex-column vh-100 justify-content-center content-section home">
       <div class="d-flex flex-row align-items-start justify-content-around">
         <!-- change this to pattern tiles -->
-        <form class="toolbox p-4 rounded w-30">
-          <h2>Toolbox</h2>
-          <div class="mb-3">
-            <label for="pattern" class="form-label">Pattern<span id="patternHelp" class="form-text text-secondary ">Choose a pattern.</span></label>
-            <div class="container">
-              <div class="row">
-                <span class="tile">
-                  <img src="/static/patterns/checkered.png" alt="checkered" class="tile-img">
-                  <p class="text-secondary">checkered</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/patterns/dots.png" alt="dots" class="tile-img">
-                  <p class="text-secondary">dots</p>
-                </span>
-                <span class="tile"> 
-                  <img src="/static/patterns/floral.jpeg" alt="floral" class="tile-img">
-                  <p class="text-secondary">floral</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/patterns/solid.png" alt="solid" class="tile-img">
-                  <p class="text-secondary">solid</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/patterns/stripes.jpeg" alt="stripes" class="tile-img">
-                  <p class="text-secondary">stripes</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/patterns/zigzag.jpeg" alt="zigzag" class="tile-img">
-                  <p class="text-secondary">zig zag</p>
-                </span>
+        <form class="toolbox rounded w-30 shadow">
+          <h2 class="w-100 pl-4 py-4 rounded-top header">Pattern Generator</h2>
+          <div class="p-4">
+            <div class="mb-3">
+              <label for="pattern" class="form-label font-weight-bold mb-0">Pattern</label>
+              <p id="patternHelp" class="form-text text-secondary mb-3">Choose a pattern type.</p>
+              <div class="container">
+                <div class="row">
+                  <span class="tile">
+                    <img src="/static/patterns/checkered.png" alt="checkered" class="tile-img">
+                    <p class="text-secondary">checkered</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/patterns/dots.png" alt="dots" class="tile-img">
+                    <p class="text-secondary">dots</p>
+                  </span>
+                  <span class="tile"> 
+                    <img src="/static/patterns/floral.jpeg" alt="floral" class="tile-img">
+                    <p class="text-secondary">floral</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/patterns/solid.png" alt="solid" class="tile-img">
+                    <p class="text-secondary">solid</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/patterns/stripes.jpeg" alt="stripes" class="tile-img">
+                    <p class="text-secondary">stripes</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/patterns/zigzag.jpeg" alt="zigzag" class="tile-img">
+                    <p class="text-secondary">zig zag</p>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="item" class="form-label">Item<span id="itemHelp" class="form-text text-secondary">Choose an item.</span></label>
-            <div class="container">
-              <div class="row">
-                <span class="tile">
-                  <img src="/static/items/top.png" alt="top" class="tile-img">
-                  <p class="text-secondary">top</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/trouser.png" alt="trouser" class="tile-img">
-                  <p class="text-secondary">trouser</p>
-                </span>
-                <span class="tile"> 
-                  <img src="/static/items/pullover.png" alt="pullover" class="tile-img">
-                  <p class="text-secondary">pullover</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/dress.png" alt="dress" class="tile-img">
-                  <p class="text-secondary">dress</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/coat.png" alt="coat" class="tile-img">
-                  <p class="text-secondary">coat</p>
-                </span>
-              </div>
-              <div class="row">
-                <span class="tile">
-                  <img src="/static/items/sandal.png" alt="sandal" class="tile-img">
-                  <p class="text-secondary">sandal</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/shirt.png" alt="shirt" class="tile-img">
-                  <p class="text-secondary">shirt</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/sneaker.png" alt="sneaker" class="tile-img">
-                  <p class="text-secondary">sneaker</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/bag.png" alt="bag" class="tile-img">
-                  <p class="text-secondary">bag</p>
-                </span>
-                <span class="tile">
-                  <img src="/static/items/ankle_boot.png" alt="ankle boot" class="tile-img">
-                  <p class="text-secondary">ankle boot</p>
-                </span>
+            <div class="mb-3">
+              <label for="item" class="form-label font-weight-bold mb-0">Item</label>
+              <p id="itemHelp" class="form-text text-secondary mb-3">Choose an item type.</p>
+              <div class="container">
+                <div class="row">
+                  <span class="tile">
+                    <img src="/static/items/top.png" alt="top" class="tile-img">
+                    <p class="text-secondary">top</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/trouser.png" alt="trouser" class="tile-img">
+                    <p class="text-secondary">trouser</p>
+                  </span>
+                  <span class="tile"> 
+                    <img src="/static/items/pullover.png" alt="pullover" class="tile-img">
+                    <p class="text-secondary">pullover</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/dress.png" alt="dress" class="tile-img">
+                    <p class="text-secondary">dress</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/coat.png" alt="coat" class="tile-img">
+                    <p class="text-secondary">coat</p>
+                  </span>
+                </div>
+                <div class="row">
+                  <span class="tile">
+                    <img src="/static/items/sandal.png" alt="sandal" class="tile-img">
+                    <p class="text-secondary">sandal</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/shirt.png" alt="shirt" class="tile-img">
+                    <p class="text-secondary">shirt</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/sneaker.png" alt="sneaker" class="tile-img">
+                    <p class="text-secondary">sneaker</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/bag.png" alt="bag" class="tile-img">
+                    <p class="text-secondary">bag</p>
+                  </span>
+                  <span class="tile">
+                    <img src="/static/items/ankle_boot.png" alt="ankle boot" class="tile-img">
+                    <p class="text-secondary">ankle boot</p>
+                  </span>
+                </div>
               </div>
             </div>
+            <button type="submit" class="btn btn-primary">Generate</button>
           </div>
-          <button type="submit" class="btn btn-primary">Generate</button>
         </form>
-        <div id="pattern-preview" class="border border-secondary shadow w-50 h-100 rounded">
-          <div class="pattern-preview-header d-flex flex-row justify-content-between position-relative">
+        <div id="pattern-preview" class="shadow w-50 h-100 rounded pattern-preview">
+          <div class="pattern-preview-header d-flex flex-row justify-content-between p-4 header rounded-top">
             <h2>Pattern Preview</h2>
             <button type="button" class="btn btn-secondary">Download</button>
           </div>
