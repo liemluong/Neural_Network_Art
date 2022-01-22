@@ -8,6 +8,7 @@
 
 .toolbox {
     background-color: #fcf3c7;
+    width: 40%;
 }
 
 .logo {
@@ -35,4 +36,8 @@
 
 .navbar, .header {
     background-color: #AFCBFF;
+}
+
+.download.dropdown {
+    position: inherit;
 }

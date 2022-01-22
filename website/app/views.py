@@ -8,7 +8,11 @@ def home(request):
     return render(request, 'home.html', {})
 
 def tool(request):
-    return render(request, 'tool.html', {})
+    context = {
+        'patterns': ['checkered', 'dots', 'floral', 'solid', 'stripes', 'zigzag'], 
+        'items': ['top', 'trouser', 'pullover', 'dress', 'coat', 'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
+    }
+    return render(request, 'tool.html', context)
 
 def about(request):
     return render(request, 'about.html', {})
