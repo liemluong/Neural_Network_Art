@@ -117,7 +117,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     BASE_DIR / "django_project/static/",
-    '/var/www/static/',
 ]
 STATIC_URL = 'static/'
 
