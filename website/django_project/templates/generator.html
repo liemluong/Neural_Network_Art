@@ -8,11 +8,14 @@
         <div class="mb-3">
           <label for="pattern" class="form-label font-weight-bold mb-0">Pattern</label>
           <p id="patternHelp" class="form-text text-secondary mb-3">Choose a pattern type.</p>
-          <div class="d-flex flex-row flex-wrap">
-            {% for p in patterns %}
+          <div class="form-group d-flex flex-row flex-wrap">
+            {% for p in generator_form.pattern %}
               <span class="tile">
-                <img src="/static/patterns/{{p}}.png" alt="{{p}}" class="tile-img">
-                <p class="text-secondary">{{p}}</p>
+                {{p.tag}}
+                <label for={{p.id_for_label}}>
+                  <img src="/static/patterns/{{p.choice_label}}.png" alt="{{p.choice_label}}" class="tile-img">
+                </label>
+                <p class="text-secondary">{{p.choice_label}}</p>
               </span>
             {% endfor %}
           </div>
@@ -20,11 +23,14 @@
         <div class="mb-3">
           <label for="item" class="form-label font-weight-bold mb-0">Item</label>
           <p id="itemHelp" class="form-text text-secondary mb-3">Choose an item type.</p>
-          <div class="d-flex flex-row flex-wrap">
-            {% for i in items %}
+          <div class="form-group d-flex flex-row flex-wrap">
+            {% for i in generator_form.item %}
               <span class="tile">
-                <img src="/static/items/{{i}}.png" alt="{{i}}" class="tile-img">
-                <p class="text-secondary">{{i}}</p>
+                {{i.tag}}
+                <label for={{i.id_for_label}}>
+                  <img src="/static/items/{{i.choice_label}}.png" alt="{{i.choice_label}}" class="tile-img">
+                </label>
+                <p class="text-secondary">{{i.choice_label}}</p>
               </span>
             {% endfor %}
           </div>
@@ -40,29 +46,20 @@
           <form class="dropdown-menu p-3">
             <div class="form-group">
               <label for="inputFileType">File Type</label>
-              <select id="inputFileType" class="form-control">
-                <option selected>Choose...</option>
-                <option>PNG</option>
-                <option>JPG</option>
-                <option>SVG</option>
-              </select>
+              {{ download_form.file_type }}
             </div>
             <div class="form-group">
               <label for="inputResolution">Resolution</label>
-              <select id="inputResolution" class="form-control">
-                <option selected>Choose...</option>
-                <option>1080p</option>
-                <option>720p</option>
-              </select>
+              {{ download_form.resolution }}
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputWidth">Width</label>
-                <input type="number" class="form-control" min=1 id="inputWidth" placeholder="Width">
+                {{ download_form.width }}
               </div>
               <div class="form-group col-md-6">
                 <label for="inputHeight">Height</label>
-                <input type="number" class="form-control" min=1 id="inputHeight" placeholder="Height">
+                {{ download_form.height }}
               </div>
             </div>
             <button type="submit" class="btn btn-primary w-100">Download</button>
