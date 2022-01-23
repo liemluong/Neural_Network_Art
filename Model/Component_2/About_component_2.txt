@@ -1,0 +1,1 @@
+This is the component 2 of the model where it takes the input image (pattern generated image) from component 1 model and style it on the object image (fashion clothe, pant) over the contour layer. 
