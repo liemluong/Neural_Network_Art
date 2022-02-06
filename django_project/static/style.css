@@ -33,6 +33,7 @@
 
 .navbar, .header {
     background-color: #A16E83;
+    font-size: larger;
 }
 
 .download.dropdown {
