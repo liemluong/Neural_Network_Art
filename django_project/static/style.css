@@ -1,13 +1,13 @@
 .home {
-    background-color: #FAEDAA;
+    background-color: #19181A;
 }
 
 .pattern-preview{
-    background-color: white;
+    background-color: #B19F9E;
 }
 
 .toolbox {
-    background-color: #fcf3c7;
+    background-color: #B19F9E;
     width: 40%;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .navbar, .header {
-    background-color: #AFCBFF;
+    background-color: #A16E83;
 }
 
 .download.dropdown {
@@ -52,11 +52,11 @@ input[type=radio] + label > img {
 }
 
 input[type=radio]:hover + label > img{
-    outline: 4px solid #007bff;
+    outline: 4px solid #CEBC81;
 }
   
 input[type=radio]:checked + label > img{
-    outline: 4px solid #007bff;
+    outline: 4px solid #CEBC81;
 }
 
 .team-pic {
