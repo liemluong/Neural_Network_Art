@@ -1,0 +1,65 @@
+.home {
+    background-color: #FAEDAA;
+}
+
+.pattern-preview{
+    background-color: white;
+}
+
+.toolbox {
+    background-color: #fcf3c7;
+    width: 40%;
+}
+
+.logo {
+    height: 5rem;
+}
+
+
+.tile-img {
+    height: 4.5rem;
+    width: 4.5rem;
+}
+
+.tile {
+    display: inline-block;
+    margin-right: 0.5rem;
+    text-align: center!important;
+}
+
+.content-section {
+    margin-top: 5rem;
+}
+
+.navbar, .header {
+    background-color: #AFCBFF;
+}
+
+.download.dropdown {
+    position: inherit;
+}
+
+input[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+input[type=radio] + label > img {
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=radio]:hover + label > img{
+    outline: 4px solid #007bff;
+}
+  
+input[type=radio]:checked + label > img{
+    outline: 4px solid #007bff;
+}
+
+.team-pic {
+    height: 15rem;
+    width: 15rem;
+}
