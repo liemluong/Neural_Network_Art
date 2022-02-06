@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ugw%r&_=e3xiblny)!jzbe4g-ze3x@di4qkm)%km(5mh+$m9)5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['aifashion.herokuapp.com']
 
