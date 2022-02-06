@@ -30,7 +30,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['aifashion.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
