@@ -52,7 +52,7 @@ input[type=radio] + label > img {
 }
 
 input[type=radio]:hover + label > img{
-    outline: 4px solid #CEBC81;
+    outline: 4px solid #479761;
 }
   
 input[type=radio]:checked + label > img{
