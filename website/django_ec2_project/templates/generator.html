@@ -1,8 +1,9 @@
 {% extends "index.html" %}
 {% block body %}
 <div class="d-flex flex-row justify-content-around w-100" >
-        <p> &nbsp;</p>
+  <p> &nbsp;</p>
 </div>
+
 <div class="d-flex flex-column vh-100 justify-content-center content-section home">
   <div class="d-flex flex-row align-items-start justify-content-around mx-5">
     <form class="toolbox rounded shadow h-100" method="post" id="generator-form">
@@ -69,7 +70,7 @@
                 {{ download_form.height }}
               </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Download</button>
+            <button type="submit" class="btn btn-primary w-100" style="background-color:#986A6C; border-color:#986A6C" onclick="downloadImage('/static/outputs/display_image.jpg')">Download</button>
           </form>
         </div>
       </div>
