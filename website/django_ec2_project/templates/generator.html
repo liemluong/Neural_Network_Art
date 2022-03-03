@@ -1,9 +1,6 @@
 {% extends "index.html" %}
 {% block body %}
-<div class="d-flex flex-row justify-content-around w-100" >
-        <p> &nbsp;</p>
-</div>
-<div class="d-flex flex-column vh-100 justify-content-center content-section home">
+<div class="d-flex flex-column justify-content-center content-section vh-100 home">
   <div class="d-flex flex-row align-items-start justify-content-around mx-5">
     <form class="toolbox rounded shadow h-100" method="post" id="generator-form">
       <h2 class="w-100 pl-4 py-4 rounded-top header" style="font-size: x-large;">Pattern Generator</h2>
@@ -73,11 +70,7 @@
           </form>
         </div>
       </div>
-      <div class="d-flex flex-row justify-content-around w-100" >
-              <p> &nbsp;</p>
-      </div>
       <div class="output">
-        <img id="loadingImage" src="/static/outputs/display_image.jpg"/>
       </div>
     </div>
 
@@ -94,11 +87,17 @@
           pattern: $("input[name=pattern]:checked").val(),
           item: $("input[name=item]:checked").val()
         },
+        beforeSend: function(){
+          $( ".output" ).append( "<div class='spinner-border role='status'></div>" );
+          $('#loadingImage').remove()
+        },
+        complete: function(){
+          $( ".spinner-border" ).remove();
+        },
         success: function( data ) 
         {
           var d = new Date();
-          $('#loadingImage').attr('src', $('#loadingImage').attr('src') + '?_=' + d.getMilliseconds()); 
-          $('#loadingImage').css("visibility", "visible");
+          $( ".output" ).append( "<img id='loadingImage' src='/static/outputs/display_image.jpg?_=" + d.getMilliseconds() + "'/>" );
         }
      })
   })

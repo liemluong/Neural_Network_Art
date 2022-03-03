@@ -69,7 +69,9 @@ input[type=radio]:checked + label > img{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    flex-direction: column;
+    height: 85%;
 }
 .output img {
     flex-shrink: 0;
@@ -77,6 +79,3 @@ input[type=radio]:checked + label > img{
     min-height: 60%
 }
 
-#loadingImage {
-    visibility: hidden;
-}
