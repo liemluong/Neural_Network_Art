@@ -5,8 +5,28 @@
     {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Neural Network Art</title>
+
+    <script type="text/javascript">
+      
+    function showImage(){
+        document.getElementById('loadingImage').style.visibility="visible";
+    }
+    async function downloadImage(imageSrc) {
+      const image = await fetch(imageSrc)
+      const imageBlog = await image.blob()
+      const imageURL = URL.createObjectURL(imageBlog)
+
+      const link = document.createElement('a')
+      link.href = imageURL
+      link.download = imageSrc
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+
+    </script>
 </head>
 <body class="home">
     <nav class="navbar navbar-expand-lg navbar-light w-100 fixed-top">
