@@ -19,7 +19,7 @@ def generator(request):
         # User selects object and style from the web
         # The two images are loaded into the model
         selected_object_image = '{}.png'.format(item)
-        selected_style_image = '{}.jpg'.format(pattern)
+        selected_style_image = '{}'.format(pattern)
 
         # Call function to load image
         obj_img = load_image(selected_object_image, 'obj')
