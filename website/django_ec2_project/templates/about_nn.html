@@ -9,63 +9,237 @@
     <h1 class="mb-5" style="color:#000000">Deep Learning Framework</h1>
     </div>
 
-    <div class="d-flex flex-row justify-content-around w-100" >
-        <p> &nbsp;</p>
-    </div>
-
-    <div class="d-flex flex-row justify-content-around w-100">
+    <div class="d-flex flex-row justify-content-center w-100">
         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         <p>
-            We consider two popular deep learning frameworks, TensorFlow and PyTorch. Ultimately, we decided to use PyTorch for our project given several considerations. Briefly, PyTorch is a popular deep learning framework that was developed by Facebook’s AI Research lab (FAIR) in 2016. It is an open source library for the Python programming language used to develop deep learning applications in computer vision and natural language processing. PyTorch has grown in popularity for its simplicity, ease of use, efficient memory usage, and flexibility. One of the main reasons we chose to use this library over TensorFlow is that it is integrated well with the Python language whereas TensorFlow is less of a pythonic framework and more of a new language. Additionally, performance in PyTorch is optimized automatically via parallelism where the intensive computational work during the training process is distributed among multiple CPU or GPU cores.
+            Art and data science, the two fields gain more traction in recent years. The application between ART and AI are the inspiration for people to produce new pieces of art with more accessible to the broader audience.
+
+            In the fashion industry there is a constant demand for new and interesting design patterns, which can often be expensive and time consuming to create. Fashion designers are bound by their own internal biases and have limitations on the level of creativity and in-demand fashion that they can create within a given timeframe.
+
+            With advance in deep learning, neural networks can be used to alleviate some problems in this field by improving the level of creative in design for both quantity and quality outputs. In this works, we implement the neural network model to generate new textile pattern for many fashion items. Our solutions and findings could be easily used by non-tech savvy and will make design creation more accessible for the broader audience.
         </p>
         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     </div>
-    <div class="d-flex flex-row justify-content-around w-100">
-        <p> &nbsp;</p>
-    </div>
-
-    <div class="d-flex flex-row justify-content-around w-100" >
-        <p> &nbsp;</p>
-    </div>
 
     <div class="d-flex flex-row justify-content-around w-100">
         <p> &nbsp;</p>
     </div>
+
     <div class="d-flex flex-row justify-content-around w-100" >
         <h2>
-            Model
+            Model Architecture
         </h2>
     </div>
-
-    <div class="d-flex flex-row justify-content-around w-100">
-        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-            For our minimum value product, we plan to develop a supervised deep learning model that produces a unique and interesting pattern.  If time permits, another aspect of our “nice to have” features include a model that will generate different and unique sewing patterns.
-        </p>
-        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    </div>
-    <div class="d-flex flex-row justify-content-around w-100" >
-        <p> &nbsp;</p>
-    </div>
-
-    <div class="d-flex flex-row justify-content-around w-100">
-        <p> &nbsp;</p>
-    </div>
-
-    <div class="d-flex flex-row justify-content-around w-100">
-        <p> &nbsp;</p>
-    </div>
-    <div class="d-flex flex-row justify-content-around w-100">
-        <h2>
-            Website
-        </h2>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+        <div class="d-flex flex-row justify-content-around w-100">
+            <h3>
+                Architecture of AI Fashion
+            </h3>
         </div>
 
+            <div class="d-flex flex-row justify-content-around w-100">
+                <img src="static/other/architecture.png">
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>
+                Our core architecture design includes two main components: Fabric Pattern Generator (component 1) and
+                    Segmentation & Masking (component 2).
+
+                In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various
+                    textile pattern datasets: cartoon, checkered, cheetah, polka dots, floral, leaves, stripes and zig zag.
+                    The output of this
+                    component 1 will be a neural network generated image input for component 2. In the component 2, another
+                    pre-trained neural network model to perform image segmentation of clothe pattern and masking the new
+                    pattern over the fashion items to produce a result.
+                </p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+
+        <div class="d-flex flex-row justify-content-around w-100">
+            <h3>
+                DCGAN Model
+            </h3>
+        </div>
+
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>DCGAN Model is the choice being used for fabric pattern generator model in this project. The advantage of
+                    DCGAN model is its continuous improving between Generator Network and Discriminator Network on improving
+                    the performance while reducing the loss of both networks to produce the best fake images. Below is the
+                    neural network structure of the Generator Network and Discriminator Network</p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+
+            <div class="d-flex flex-row justify-content-around w-100" >
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <img src="static/other/dcgan.png">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>Improving the model performance and reducing the loss are our objectives. We use the default Adam optimizer
+                    and Binary Cross Entropy loss from PyTorch.</p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <img src="static/other/loss.png">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30).
+                    This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion)
+                    2019 at FGVC6.</p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
     <div class="d-flex flex-row justify-content-around w-100">
-        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-            We intend on building a website as a “nice to have” feature. Upon completion of our model, should time allow, we will create a website that will allow users to interact with it. The first stage of this website will focus on pattern generation. We will allow users to customize their design preferences (e.g. stripes, florals) and output a pattern based on their inputs. They will be able to download the pattern as an image file to their own devices, and use it as they wish. Further “nice to have” features on our website will include visualizing the patterns on some items or on AI generated sewing patterns - given we are able to complete this model.
-        </p>
-        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p> &nbsp;</p>
     </div>
+    <div class="d-flex flex-row justify-content-around w-100">
+        <h2>
+            Data
+        </h2>
+    </div>
+
+        <div class="d-flex flex-row justify-content-around w-100">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>The training datasets for the DCGAN model are segregated into one of the 11 categories. These images are cleaned
+            and standardized to the same height and width (224 x 224 pixels)</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+
+        <div class="d-flex flex-row justify-content-around w-100">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <img src="static/other/data.png">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+        <div class="d-flex flex-row justify-content-around w-100">
+            <p> &nbsp;</p>
+        </div>    <div class="d-flex flex-row justify-content-around w-100">
+        <p> &nbsp;</p>
+    </div>
+    <div class="d-flex flex-row justify-content-around w-100">
+        <h2>
+            Results
+        </h2>
+    </div>
+
+        <div class="d-flex flex-row justify-content-around w-100">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>Fabric Pattern Generator Model: Among the six-pattern datasets we trained, we achieved good results for Floral and Cheetah of the fake images and lower loss values
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+
+        <div class="d-flex flex-row justify-content-around w-100">
+            <h3>
+                Floral Results
+            </h3>
+        </div>
+
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <img src="static/other/floral.png">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <img src="static/other/floral_performance.png">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+        <div class="d-flex flex-row justify-content-around w-100">
+            <h3>
+                Final Results Example
+            </h3>
+        </div>
+
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>Below are sample of the output results after masking generated pattern (component 1)
+                    on to a fashion item (component 2)</p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <img src="static/other/example.png">
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+                <p> &nbsp;</p>
+            </div>
+    <div class="d-flex flex-row justify-content-around w-100">
+        <p> &nbsp;</p>
+    </div>
+    <div class="d-flex flex-row justify-content-around w-100">
+        <h2>
+            Conclusions
+        </h2>
+    </div>
+
+        <div class="d-flex flex-row justify-content-around w-100">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>Among the categories, we achieve best results – where the fake images generated from the neural network
+                are closer to the real images - with floral, cheetah, paisley, and leaves. The checkered and dotted are
+                showing some improvements in the fake images but still not the optimum outcome. The take-away from the
+                result is that DCGAN model works well for the type of images that does not possess a strict geometric
+                pattern.
+                </br>
+                </br>
+                The other interesting observation that we see that can improve the model by training with various settings.
+                    This will reduce the loss performance between Generator Network and Discriminator Network :
+                A small Adam optimizer value (< 0.05)
+                Smaller size of z latent vector ( < 100)
+                Learning rate between 0.0002 and 0.00002
+                The higher training epoch, the better result it yield.
+                </br>
+                </br>
+                Art image can be viewed as an abstract art. This is due to the nature of there is no boundary of how art
+                image is produced and perceived by viewer. Art can have bias as well. A regular viewer may not find the
+                Picasso painting interesting, but a real artist can see the abstract inner beauty of that piece of art.
+                This characteristic is also applied in the neural network generated image.</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+    <div class="d-flex flex-row justify-content-around w-100">
+        <p> &nbsp;</p>
+    </div>
+    <div class="d-flex flex-row justify-content-around w-100">
+        <h2>
+            Limitations
+        </h2>
+    </div>
+        <div class="d-flex flex-row justify-content-around w-100">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>One of the limitations we experience is the nature of computer vision. This area in deep learning
+                requires computing power – especially GPU – in order to train the neural network model. The better
+                result we gain but it costs lot of time to train.
+                Second limitation is the limit of free available GPU resources from Google Colab we have.
+                Third limitation is the accuracy of result from component 2 based on various factors: image
+                characteristic (transparency background, plain icon), blend image with people from obscure view.</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+
+
 {% endblock %}

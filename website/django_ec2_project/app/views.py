@@ -50,3 +50,6 @@ def about_team(request):
 
 def about_nn(request):
     return render(request, 'about_nn.html', {})
+
+def about_project(request):
+    return render(request, 'about_project.html', {})
