@@ -14,7 +14,7 @@ PATTERN_CHOICES = [
 
 ITEM_CHOICES = [
     ('shirt','shirt'),
-    ('sants','pants'),
+    ('pants','pants'),
     ('sweater','sweater'),
     ('dress','dress'),
     ('coat','coat'),
