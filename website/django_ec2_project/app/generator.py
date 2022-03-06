@@ -31,13 +31,10 @@ def load_image(selected_image, identifier):
         img = object_image[:, :, ::-1]  # convert RGB to BGR
     else:
         #select pattern image to apply
-        pattern_path = os.path.join('..\\django_ec2_project\\static\\patterns', selected_image)
-        print("PATTERN PATH: ", pattern_path)
+        pattern_path = os.path.join('../django_ec2_project/static/patterns', selected_image)
         files = os.listdir(pattern_path)
         random_pattern = random.choice(files)
-        print("RANDOM PATTERN: " , random_pattern)
         selected_pattern = os.path.join(pattern_path, random_pattern)
-        print("SELECTED IMAGE: ", selected_pattern)
         style_image = cv2.imread(selected_pattern)
         img = style_image[:, :, ::-1]  # convert RGB to BGR
 
