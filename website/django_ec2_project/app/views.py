@@ -36,8 +36,8 @@ def generator(request):
         save_image(obj_img, 'display_image')
 
     context = {
-        'patterns': ['checkered', 'dots', 'floral', 'solid', 'stripes', 'zigzag'],
-        'items': ['top', 'trouser', 'pullover', 'dress', 'coat', 'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot'],
+        'patterns': ['cartoon', 'checkered', 'cheetah', 'dots', 'floral', 'leaves', 'solid', 'stripes', 'zigzag'],
+        'items': ['bag', 'boots', 'coat', 'dress', 'pants', 'sandals', 'shirt', 'shoes', 'sweater'],
         'generator_form': pattern_form,
         'download_form': DownloadForm()
     }

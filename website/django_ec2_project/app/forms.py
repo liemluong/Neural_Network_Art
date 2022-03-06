@@ -1,25 +1,28 @@
 from django import forms
 
 PATTERN_CHOICES = [
-    ('checkered','checkered'), 
+    ('cartoon', 'cartoon'),
+    ('checkered','checkered'),
+    ('cheetah', 'cheetah'),
     ('dots','dots'),
     ('floral','floral'),
+    ('leaves', 'leaves'),
     ('solid','solid'),
     ('stripes','stripes'),
     ('zigzag','zigzag')
 ]
 
 ITEM_CHOICES = [
-    ('top','top'), 
-    ('trouser','trouser'),
-    ('pullover','pullover'),
+    ('shirt','shirt'),
+    ('sants','pants'),
+    ('sweater','sweater'),
     ('dress','dress'),
     ('coat','coat'),
-    ('sandal','sandal'),
-    ('shirt','shirt'),
-    ('sneaker','sneaker'),
-    ('bag','bag'),
-    ('ankle boot','ankle boot')
+    ('sandals','sandals'),
+    ('shoes','shoes'),
+    ('boots','boots'),
+    ('bag', 'bag')
+
 ]
 
 FILE_TYPE_CHOICES = [
@@ -40,5 +43,5 @@ class PatternGeneratorForm(forms.Form):
 class DownloadForm(forms.Form):
     file_type = forms.ChoiceField(choices = FILE_TYPE_CHOICES, widget=forms.Select(attrs={'class': "form-control"}))
     resolution = forms.ChoiceField(choices = RESOLUTION_CHOICES, widget=forms.Select(attrs={'class': "form-control"}))
-    width = forms.IntegerField(min_value=1, widget=forms.NumberInput(attrs={'class': "form-control", "placeholder": "Width"}))
-    height = forms.IntegerField(min_value=1, widget=forms.NumberInput(attrs={'class': "form-control", "placeholder": "Height"}))
+    width = forms.IntegerField(min_value=1, widget=forms.NumberInput(attrs={'class': "form-control", "placeholder": "250px"}))
+    height = forms.IntegerField(min_value=1, widget=forms.NumberInput(attrs={'class': "form-control", "placeholder": "250px"}))
