@@ -40,7 +40,7 @@ def load_image(selected_image, identifier):
         selected_pattern = os.path.join(pattern_path, random_pattern)
         style_image = cv2.imread(selected_pattern)
         img = style_image[:, :, ::-1]  # convert RGB to BGR
-
+        save_image(img, 'download')
     return img
 
 

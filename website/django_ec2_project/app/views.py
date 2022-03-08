@@ -13,10 +13,6 @@ def generator(request):
     # create a form instance and populate it with data from the request:
     pattern_form = PatternGeneratorForm(request.POST, request.FILES)
     download_form = DownloadForm(request.POST)
-    print(download_form.is_valid())
-    print(pattern_form.is_valid())
-    print(download_form.errors)
-    # upload_form = UploadForm(request.POST, request.FILES, use_required_attribute=False)
     if request.method == 'POST':
         if download_form.is_valid():
             pattern_form = PatternGeneratorForm()
@@ -26,7 +22,7 @@ def generator(request):
             height = int(request.POST.get('height'))
             pattern = request.POST.get('pattern')
             if content == 'pattern':
-                image = Image.open('../django_ec2_project/static/patterns/{}.jpg'.format(pattern))
+                image = Image.open('../django_ec2_project/static/outputs/download.jpg')
                 if file_type == 'PNG':
                     resized_image = image.resize((width, height))
                     resized_image.save('../django_ec2_project/static/outputs/download.png')
@@ -57,7 +53,7 @@ def generator(request):
 
                 # User selects object and style from the web
                 # The two images are loaded into the model
-                selected_style_image = '{}.jpg'.format(pattern)
+                selected_style_image = '{}'.format(pattern)
 
                 # Call function to load image
                 stl_img = load_image(selected_style_image, 'stl')
@@ -74,7 +70,6 @@ def generator(request):
             else:
                 print('not valid')
                 pattern_form = PatternGeneratorForm()
-
     context = {
         'patterns': ['cartoon', 'checkered', 'cheetah', 'dots', 'floral', 'leaves', 'solid', 'stripes', 'zigzag'],
         'items': ['bag', 'boots', 'coat', 'dress', 'pants', 'sandals', 'shirt', 'shoes', 'sweater'],
