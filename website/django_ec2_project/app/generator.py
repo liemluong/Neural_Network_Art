@@ -6,7 +6,7 @@ import torchvision
 import PIL.Image
 import numpy as np
 import albumentations as albu
-
+import random
 import warnings
 
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -26,13 +26,19 @@ def load_image(selected_image, identifier):
     Load images
     '''
     if identifier == 'obj':
+        #select item image
         object_image = cv2.imread(os.path.join('../django_ec2_project/static/items', selected_image))
         img = object_image[:, :, ::-1]  # convert RGB to BGR
     elif identifier == 'upload':
         upload_image = cv2.imread(os.path.join('../django_ec2_project/media/uploads', selected_image))
         img = upload_image[:, :, ::-1]  # convert RGB to BGR
     else:
-        style_image = cv2.imread(os.path.join('../django_ec2_project/static/patterns', selected_image))
+        #select pattern image to apply
+        pattern_path = os.path.join('../django_ec2_project/static/patterns', selected_image)
+        files = os.listdir(pattern_path)
+        random_pattern = random.choice(files)
+        selected_pattern = os.path.join(pattern_path, random_pattern)
+        style_image = cv2.imread(selected_pattern)
         img = style_image[:, :, ::-1]  # convert RGB to BGR
 
     return img

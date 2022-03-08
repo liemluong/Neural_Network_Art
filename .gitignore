@@ -3,3 +3,6 @@ data/.DS_Store
 notebooks/.ipynb_checkpoints/
 website/django_project/.DS_Store
 website/django_project/static/.DS_Store
+website/django_ec2_project/app/__pycache_/_
+website/django_ec2_project/django_ec2_project/__pycache__/
+website/venv/

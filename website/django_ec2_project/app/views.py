@@ -76,8 +76,8 @@ def generator(request):
                 pattern_form = PatternGeneratorForm()
 
     context = {
-        'patterns': ['checkered', 'dots', 'floral', 'solid', 'stripes', 'zigzag'],
-        'items': ['top', 'trouser', 'pullover', 'dress', 'coat', 'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot'],
+        'patterns': ['cartoon', 'checkered', 'cheetah', 'dots', 'floral', 'leaves', 'solid', 'stripes', 'zigzag'],
+        'items': ['bag', 'boots', 'coat', 'dress', 'pants', 'sandals', 'shirt', 'shoes', 'sweater'],
         'generator_form': pattern_form,
         'download_form': download_form,
     }
@@ -90,3 +90,6 @@ def about_team(request):
 
 def about_nn(request):
     return render(request, 'about_nn.html', {})
+
+def about_project(request):
+    return render(request, 'about_project.html', {})

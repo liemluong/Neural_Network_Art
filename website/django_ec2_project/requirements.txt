@@ -1,7 +1,13 @@
-asgiref==3.5
+albumentations
+asgiref==3.4.1
 backports.zoneinfo==0.2.1
-Django==4.0.2
+cloths-segmentation
+opencv-python-headless
+Django
+iglovikov-helper-functions
+numpy
+Pillow
 sqlparse==0.4.2
+torch
+torchvision
 tzdata==2021.5
-
-
