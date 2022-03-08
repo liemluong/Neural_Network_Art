@@ -28,6 +28,9 @@ def load_image(selected_image, identifier):
     if identifier == 'obj':
         object_image = cv2.imread(os.path.join('../django_ec2_project/static/items', selected_image))
         img = object_image[:, :, ::-1]  # convert RGB to BGR
+    elif identifier == 'upload':
+        upload_image = cv2.imread(os.path.join('../django_ec2_project/media/uploads', selected_image))
+        img = upload_image[:, :, ::-1]  # convert RGB to BGR
     else:
         style_image = cv2.imread(os.path.join('../django_ec2_project/static/patterns', selected_image))
         img = style_image[:, :, ::-1]  # convert RGB to BGR
@@ -97,6 +100,6 @@ def save_image(final_image, file_name):
     '''
     Save the result of the final result into the output_images folder
     '''
-    file_name = file_name + '.jpg'
+    jpg_file_name = file_name + '.jpg'
     im = Image.fromarray(final_image)
-    im.save(os.path.join('../django_ec2_project/static/outputs', file_name))
+    im.save(os.path.join('../django_ec2_project/static/outputs', jpg_file_name))

@@ -37,8 +37,19 @@
             {% endfor %}
           </div>
         </div>
+        <form></form>
+        <p class="text-center font-weight-bold">OR</p>
+        <div class="mb-3">
+          <!-- <label for="item" class="form-label font-weight-bold mb-0">Upload Your Own Image</label> -->
+          <p id="itemHelp" class="form-text text-secondary mb-3">Upload your own image (PNG/JPG).</p>
+            {{ generator_form.item_image }}
+        </div>
+        <div class="mb-3">
+          {{ generator_form.use_upload }}
+          <span>Use my image</span>
+        </div>
       <div>
-          <button type="submit" class="btn btn-primary" style="background-color:#986A6C; border-color: #986A6C;">Generate</button>
+          <button type="submit" class="btn btn-primary" style="background-color:#986A6C; border-color: #986A6C;" form="generator-form">Generate</button>
       </div>
       </div>
     </form>
@@ -47,14 +58,14 @@
         <h2 style="font-size: x-large;">Pattern Preview</h2>
         <div class="download dropdown d-flex justify-content-end">
           <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" style="background-color:#986A6C; border-color:#986A6C">Download</button>
-          <form class="dropdown-menu p-3" style="background-color:#ffefef">
+          <form class="dropdown-menu p-3" id="download-form" method="post" style="background-color:#ffefef">
             <div class="form-group">
               <label for="inputFileType">File Type</label>
               {{ download_form.file_type }}
             </div>
             <div class="form-group">
-              <label for="inputResolution">Resolution</label>
-              {{ download_form.resolution }}
+              <label for="inputContent">Content</label>
+              {{ download_form.content }}
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -66,7 +77,7 @@
                 {{ download_form.height }}
               </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100" style="background-color:#986A6C; border-color:#986A6C" onclick="downloadImage('/static/outputs/display_image.jpg')">Download</button>
+            <button type="submit" class="btn btn-primary w-100" style="background-color:#986A6C; border-color:#986A6C">Download</button>
           </form>
         </div>
       </div>
@@ -77,29 +88,89 @@
   </div>
 </div>  
 <script type="text/javascript">
+  var PATTERN = ""
   $(document).on('submit','#generator-form',function(e){
+    e.preventDefault()
+    if (!($("input[name=item]:checked").val() === undefined && !$('#id_use_upload').is(':checked'))) {
+      var formData = new FormData();
+      formData.append('item_image', $("#id_item_image").prop('files')[0]); 
+      formData.append('pattern', $("input[name=pattern]:checked").val()); 
+      if ($("input[name=item]:checked").val() !== undefined) {
+        formData.append('item', $("input[name=item]:checked").val()); 
+      }
+      formData.append('use_upload', $('#id_use_upload').is(':checked'));
+      $.ajax(
+      {
+          type:"POST",
+          url: "/generator",
+          contentType: false,
+          processData: false,
+          data: formData,
+          beforeSend: function(){
+            $( ".output" ).append( "<div class='spinner-border role='status'></div>" );
+            $('#loadingImage').remove()
+          },
+          complete: function(){
+            $( ".spinner-border" ).remove();
+            window.PATTERN = $("input[name=pattern]:checked").val();
+            $('#generator-form')[0].reset();
+          },
+          success: function( data ) 
+          {
+            var d = new Date();
+            $( ".output" ).append( "<img id='loadingImage' src='/static/outputs/display_image.jpg?_=" + d.getMilliseconds() + "'/>" );
+          }
+       })
+    } else {
+      alert('Select an item or use your own photo.');
+    }
+  })
+
+  $(document).on('submit','#download-form',function(e){
     e.preventDefault()
     $.ajax(
     {
         type:"POST",
         url: "/generator",
         data:{
-          pattern: $("input[name=pattern]:checked").val(),
-          item: $("input[name=item]:checked").val()
-        },
-        beforeSend: function(){
-          $( ".output" ).append( "<div class='spinner-border role='status'></div>" );
-          $('#loadingImage').remove()
-        },
-        complete: function(){
-          $( ".spinner-border" ).remove();
+          file_type: $('#id_file_type').find(":selected").text(),
+          content: $('#id_content').find(":selected").text(),
+          width: $("input[name=width]").val(),
+          height: $("input[name=height]").val(),
+          pattern: PATTERN,
         },
         success: function( data ) 
         {
+          file_type = $('#id_file_type').find(":selected").text();
           var d = new Date();
-          $( ".output" ).append( "<img id='loadingImage' src='/static/outputs/display_image.jpg?_=" + d.getMilliseconds() + "'/>" );
+          if (file_type == 'PNG') {
+            downloadImage('/static/outputs/download.png');
+          } else if (file_type == 'JPG') {
+            downloadImage('/static/outputs/download.jpg');
+          }
+          $('#download-form')[0].reset();
         }
      })
   })
+
+  async function downloadImage(imageSrc) {
+    var headers = new Headers();
+    headers.append('pragma', 'no-cache');
+    headers.append('cache-control', 'no-cache');
+
+    const options = {
+      headers: headers,
+    };
+    const image = await fetch(imageSrc, options)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
+
+    const link = document.createElement('a')
+    link.href = imageURL
+    link.download = imageSrc
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 </script>
 {% endblock %}
