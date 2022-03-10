@@ -12,11 +12,12 @@
     <div class="d-flex flex-row justify-content-center w-100">
         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         <p>
-            Art and data science, the two fields gain more traction in recent years. The application between ART and AI are the inspiration for people to produce new pieces of art with more accessible to the broader audience.
+           The intersection of art and data science has gained more popularity in recent years. The applications between art and AI serve as inspiration for people to produce new works of art that can be more accessible to the broader audience.
 
-            In the fashion industry there is a constant demand for new and interesting design patterns, which can often be expensive and time consuming to create. Fashion designers are bound by their own internal biases and have limitations on the level of creativity and in-demand fashion that they can create within a given timeframe.
+            In the fashion industry there is constant demand for new and interesting design patterns, which can often be expensive and time consuming to create. Fashion designers are bound by their own internal biases and face limitations on the level of creativity and in-demand fashion that they can create within a given timeframe.
 
-            With advance in deep learning, neural networks can be used to alleviate some problems in this field by improving the level of creative in design for both quantity and quality outputs. In this works, we implement the neural network model to generate new textile pattern for many fashion items. Our solutions and findings could be easily used by non-tech savvy and will make design creation more accessible for the broader audience.
+            With advances in deep learning, neural networks can be used to alleviate some problems in this field by improving the level of creativity in design for both quantity and quality outputs. In this work, we implement a neural network model to generate new textile patterns for many fashion items. Our solutions and findings could be easily used by the non-tech savvy and will make designs more accessible for the broader audience.
+
         </p>
         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     </div>
@@ -48,15 +49,11 @@
             <div class="d-flex flex-row justify-content-around w-100">
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <p>
-                Our core architecture design includes two main components: Fabric Pattern Generator (component 1) and
-                    Segmentation & Masking (component 2).
+                Our core architecture design includes two main components: Fabric Pattern Generator (component 1) and Segmentation & Masking (component 2).
 
-                In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various
-                    textile pattern datasets: cartoon, checkered, cheetah, polka dots, floral, leaves, stripes and zig zag.
-                    The output of this
-                    component 1 will be a neural network generated image input for component 2. In the component 2, another
-                    pre-trained neural network model to perform image segmentation of clothe pattern and masking the new
-                    pattern over the fashion items to produce a result.
+                    In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various textile pattern datasets. The output of this component 1 will be a neural network generated image input for component 2. In component 2, another pre-trained neural network model will perform image segmentation of clothing patterns and mask the new pattern over the fashion items to produce a result.
+
+                    In this project, we use PyTorch to build models and Django to develop website. The final product is hosted on Amazon AWS
                 </p>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
@@ -69,10 +66,8 @@
 
             <div class="d-flex flex-row justify-content-around w-100">
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p>DCGAN Model is the choice being used for fabric pattern generator model in this project. The advantage of
-                    DCGAN model is its continuous improving between Generator Network and Discriminator Network on improving
-                    the performance while reducing the loss of both networks to produce the best fake images. Below is the
-                    neural network structure of the Generator Network and Discriminator Network</p>
+                <p>DCGAN Model is the architecture being used for fabric pattern generation in this project. The advantage of DCGAN is its continuous improvement between the Generator and Discriminator Networks by improving the performance while reducing the loss of both networks to produce the best fake images. Below is the neural network structure of the Generator Network and Discriminator Network.
+                </p>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
 
@@ -86,8 +81,8 @@
             </div>
             <div class="d-flex flex-row justify-content-around w-100">
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p>Improving the model performance and reducing the loss are our objectives. We use the default Adam optimizer
-                    and Binary Cross Entropy loss from PyTorch.</p>
+                <p>Improving the model performance and reducing the loss are our objectives. We use the default Adam optimizer and Binary Cross Entropy loss from PyTorch.
+                </p>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
 
@@ -101,9 +96,8 @@
             </div>
             <div class="d-flex flex-row justify-content-around w-100">
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p>With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30).
-                    This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion)
-                    2019 at FGVC6.</p>
+                <p>With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6.
+                </p>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
     <div class="d-flex flex-row justify-content-around w-100">
@@ -117,8 +111,9 @@
 
         <div class="d-flex flex-row justify-content-around w-100">
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p>The training datasets for the DCGAN model are segregated into one of the 11 categories. These images are cleaned
-            and standardized to the same height and width (224 x 224 pixels)</p>
+            <p>
+            The training datasets for the DCGAN model are segregated into one of the 11 categories. These images are cleaned and standardized to the same height and width (224 x 224 pixels)
+            </p>
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
 
@@ -140,7 +135,9 @@
 
         <div class="d-flex flex-row justify-content-around w-100">
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p>Fabric Pattern Generator Model: Among the six-pattern datasets we trained, we achieved good results for Floral and Cheetah of the fake images and lower loss values
+            <p>
+            Fabric Pattern Generator Model: Among the six-pattern datasets we trained, we achieved good results for Floral and Cheetah of the fake images and lower loss values. Below is our floral result in a 4x4 matrix from the model.
+            </p>
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
 
@@ -178,7 +175,7 @@
             <div class="d-flex flex-row justify-content-around w-100">
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <p>Below are sample of the output results after masking generated pattern (component 1)
-                    on to a fashion item (component 2)</p>
+                    on to a fashion item (component 2).</p>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
 
@@ -201,27 +198,41 @@
 
         <div class="d-flex flex-row justify-content-around w-100">
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p>Among the categories, we achieve best results – where the fake images generated from the neural network
-                are closer to the real images - with floral, cheetah, paisley, and leaves. The checkered and dotted are
-                showing some improvements in the fake images but still not the optimum outcome. The take-away from the
-                result is that DCGAN model works well for the type of images that does not possess a strict geometric
-                pattern.
+            <p>Among the eleven categories of patterns, we achieved best results – where the fake images generated from the neural network were closer to the real images - with floral, cheetah, paisley, and leaves. The take-away from the result is that DCGAN model works well for the type of images that does not possess a strict geometric pattern.
+
                 </br>
                 </br>
-                The other interesting observation that we see that can improve the model by training with various settings.
-                    This will reduce the loss performance between Generator Network and Discriminator Network :
-                A small Adam optimizer value (< 0.05)
-                Smaller size of z latent vector ( < 100)
-                Learning rate between 0.0002 and 0.00002
-                The higher training epoch, the better result it yield.
-                </br>
-                </br>
-                Art image can be viewed as an abstract art. This is due to the nature of there is no boundary of how art
-                image is produced and perceived by viewer. Art can have bias as well. A regular viewer may not find the
-                Picasso painting interesting, but a real artist can see the abstract inner beauty of that piece of art.
-                This characteristic is also applied in the neural network generated image.</p>
-            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            The other interesting observation is that we can improve the model by training with various settings. This will reduce the loss performance between Generator Network and Discriminator Network :
+
+            </p>
+
         </div>
+          <div class="d-flex flex-row justify-content-around w-100">
+                <ul>
+            <li>
+                                A small Adam optimizer beta value (< 0.05)
+
+            </li>
+            <li>
+                                Smaller size of z latent vector ( < 100)
+
+            </li>
+            <li>
+                                Learning rate between 0.0002 and 0.00002
+
+            </li>
+            <li>
+                                The larger training epoch, the better result it yield
+
+            </li>
+        </ul>
+
+          </div>
+            <div class="d-flex flex-row justify-content-around w-100">
+            <p>The generated image from our model at this stage can be viewed as abstract art. There are no boundaries to how art can be produced and perceived as art can be subjective and influenced by a creator or viewer’s biases.
+            </p>
+              <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
     <div class="d-flex flex-row justify-content-around w-100">
         <p> &nbsp;</p>
     </div>
@@ -232,12 +243,12 @@
     </div>
         <div class="d-flex flex-row justify-content-around w-100">
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p>One of the limitations we experience is the nature of computer vision. This area in deep learning
-                requires computing power – especially GPU – in order to train the neural network model. The better
-                result we gain but it costs lot of time to train.
-                Second limitation is the limit of free available GPU resources from Google Colab we have.
-                Third limitation is the accuracy of result from component 2 based on various factors: image
-                characteristic (transparency background, plain icon), blend image with people from obscure view.</p>
+            <p>One of the limitations we experienced is that computer vision requires computing power – especially GPU – in order to train the neural networks. We gained better results with larger training epochs but it was very time consuming..
+
+            Second limitation is the limit on free available GPU resources from Google Colab we have.
+
+            Third limitation is the accuracy of result from component 2 based on various factors: image characteristic (transparency of the background, plain icon), and blend image with people from obscure view.
+            </p>
             <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
 
