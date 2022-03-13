@@ -13,6 +13,7 @@ urlpatterns = [
     path('about-project', views.about_project, name='about_project'),
 ]
 
+# Setting paths for user uploaded images
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
     

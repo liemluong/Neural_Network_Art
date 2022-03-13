@@ -36,17 +36,16 @@ CONTENT = [
     ('item', 'item'),
 ]
 
-# class PatternGeneratorForm(forms.Form):
-#     pattern = forms.ChoiceField(choices = PATTERN_CHOICES, widget=forms.RadioSelect)
-#     item = forms.ChoiceField(choices = ITEM_CHOICES, widget=forms.RadioSelect)
-#     use_upload = forms.BooleanField()
-
+# Download form
+# Takes file type, content, width, height
 class DownloadForm(forms.Form):
     file_type = forms.ChoiceField(choices = FILE_TYPE_CHOICES, widget=forms.Select(attrs={'class': "form-control"}))
     content = forms.ChoiceField(choices = CONTENT, widget=forms.Select(attrs={'class': "form-control"}))
     width = forms.IntegerField(min_value=1, widget=forms.NumberInput(attrs={'class': "form-control", "placeholder": "Width"}))
     height = forms.IntegerField(min_value=1, widget=forms.NumberInput(attrs={'class': "form-control", "placeholder": "Height"}))
 
+# Pattern generation form
+# Takes pattern, item, uploaded image, and whether or not to use the uploaded image
 class PatternGeneratorForm(forms.ModelForm):
     pattern = forms.ChoiceField(choices = PATTERN_CHOICES, widget=forms.RadioSelect)
     item = forms.ChoiceField(choices = ITEM_CHOICES, widget=forms.RadioSelect, required=False)

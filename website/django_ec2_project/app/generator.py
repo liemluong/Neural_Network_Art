@@ -46,7 +46,7 @@ def load_image(selected_image, identifier):
 
 def resize_image(source_img, target_img):
     '''
-    Resize the style image to the same size of the object image
+    Resize the pattern image to the same size of the item image
     '''
     target_img = cv2.resize(target_img, (source_img.shape[1], source_img.shape[0]))
 
@@ -104,7 +104,7 @@ def transform_image(original, bw, fill):
 
 def save_image(final_image, file_name):
     '''
-    Save the result of the final result into the output_images folder
+    Save the result of the final result into the outputs folder
     '''
     jpg_file_name = file_name + '.jpg'
     im = Image.fromarray(final_image)
