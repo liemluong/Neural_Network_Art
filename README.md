@@ -13,7 +13,13 @@ In the fashion industry there is constant demand for new and interesting design 
 With advances in deep learning, neural networks can be used to alleviate some problems in this field by improving the level of creativity in design for both quantity and quality outputs. In this work, we implement a neural network model to generate new textile patterns for many fashion items. Our solutions and findings could be easily used by the non-tech savvy and will make designs more accessible for the broader audience.
 
 ### Data Pipeline
-We will be using a dataset containing images of clothing patterns from a public github repository (https://github.com/lstearns86/clothing-pattern-dataset) for our minimum viable product. This dataset is free to use without restriction. It’s available to us in CSV format and consists of 2750 images of clothing patterns grouped into six classes: solid (419), striped (534), dotted (315), checkered (492), zigzag (407), and floral (582). In addition to the classes and images, the dataset comes with 8 other features: original width, original height, crop X, crop Y, crop width, crop height, and scales. These features will be used to reconstruct the images in the dataset. In addition to the images in the CSV file, the dataset also contains 400 fabric pattern images in PNG format, grouped into their respective patterns by folder location. We will be using Jupyter Notebooks to import and experiment with the dataset.
+We will be using a dataset containing images of clothing patterns from a public github repository (https://github.com/lstearns86/clothing-pattern-dataset). This dataset is free to use without restriction. It’s available to us in CSV format. In addition to the classes and images, the dataset comes with 8 other features: original width, original height, crop X, crop Y, crop width, crop height, and scales. These features will be used to reconstruct the images in the dataset. Also, additional patterns are collected from web-scraping the following sites: 
+* Fashion Fabrics Club, https://www.fashionfabricsclub.com
+* Online Fabric Store, https://www.onlinefabricstore.com 
+
+The training datasets for DCGAN model are segregated into one of the 11 categories. These images are cleaned and standardized to the same height and width (224 x 224 pixels).
+
+![](/Images/dataset_categories.JPG?raw=true "Dataset pic")
 
 ### Technology Framework
 * PyTorch (back-end model)
@@ -34,10 +40,17 @@ DCGAN Model is the architecture being used for fabric pattern generation in this
 
 ![](/Images/DCGAN_architecture.JPG?raw=true "DCGAN architecture pic")
 
-With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. 
+Improving the model performance and reducing the loss are our objectives. We use the default Adam optimizer and Binary Cross Entropy loss from PyTorch.
+![](/Images/loss_function.JPG?raw=true "Loss function pic")
+
+With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. We refer the sample from Vladimir Iglovikov (Binary Segmentation of Cloths) to develop our component 2.
+
+### Sample Output
+Here is one sample of the final outputs we get from the application.
+![](/Images/sample_result.JPG?raw=true "Result pic")
 
 ### Website 
-We intend on building a website as a “nice to have” feature. Upon completion of our model, should time allow, we will create a website that will allow users to interact with it. The first stage of this website will focus on pattern generation. We will allow users to customize their design preferences (e.g. stripes, florals) and output a pattern based on their inputs. They will be able to download the pattern as an image file to their own devices, and use it as they wish. Further “nice to have” features on our website will include visualizing the patterns on some items or on AI generated sewing patterns - given we are able to complete this model.
+We create a website that will allow users to interact with it. The first stage of this website will focus on pattern generation. We will allow users to customize their design preferences (e.g. stripes, florals) and output a pattern based on their inputs. They will be able to download the pattern as an image file to their own devices, and use it as they wish.
 
 ### Cited Sources
 * Reading Sources:
