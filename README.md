@@ -24,15 +24,13 @@ We consider two popular deep learning frameworks, TensorFlow and PyTorch. Ultima
 
 ### Architecture
 Our core architecture design includes two main components: Fabric Pattern Generator (component 1) and Segmentation & Masking (component 2). 
-
-![](/Images/Project_Architecture.png?raw=true "Project architecture pic")
+![](/Images/Project_Architecture.jpg?raw=true "Project architecture pic")
 
 In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various textile pattern datasets. The output of this component 1 will be a neural network generated image input for component 2. In component 2, another pre-trained neural network model will perform image segmentation of clothing patterns and mask the new pattern over the fashion items to produce a result.
 
 ### Model 
 DCGAN Model is the architecture being used for fabric pattern generation in this project. The advantage of DCGAN is its continuous improvement between the Generator and Discriminator Networks by improving the performance while reducing the loss of both networks to produce the best fake images. Below is the neural network structure of the Generator Network and Discriminator Network 
-
-![](/Images/DCGAN_architecture.png?raw=true "DCGAN architecture pic")
+![](/Images/DCGAN_architecture.jpg?raw=true "DCGAN architecture pic")
 
 With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. 
 
