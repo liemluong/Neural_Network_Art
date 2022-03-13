@@ -3,6 +3,8 @@ Authors: Aaliyah Hänni, Dwight Sablan, Liem Luong, Vanessa Joy Hsu
 
 Sponsor: Tatiana Teppoeva
 
+![Alt Image text](/Images/Website Image.png?raw=true)
+
 ### Introduction
 Art and data science - on the surface it looks like there is no correlation between the two fields. Fashion and neural networks - the relationship between the two may not be clear. Travel back in time, the history of digital art and technology started in the ‘60s. In the old days, there were challenges with limited computing resources and the power to blend art and AI for a meaningful result. Any accomplishment at that time was considered a significant success in the art field. As technology advances year by year, the application between art and AI gets closer. In reality, art and fashion are the inspiration for people to come up with new pieces of art. Advanced machine learning in the data science field enables creativity to make this process more efficient and more accessible to the broader audience. That is where the two fields meet to make our life more enjoyable. In this project proposal, we share our plan for leveraging deep learning in the data science field to create new types of art: an AI-generated pattern. 
 
