@@ -20,21 +20,24 @@ We intend on building a website as a “nice to have” feature. Upon completion
 
 ### Cited Sources
 * Reading Sources:
-How long does it take to manufacture custom clothing? Intrepid Sourcing & Services. (2021, December 3). Retrieved December 9, 2021, from https://intrepidsourcing.com/trade-wiki/how-long-does-it-take-to-manufacture-custom-clothing/.
 
-Quick Answer: How Much Should I Charge For Designing Clothes? Outrightdigitalmedia.com. (n.d.). Retrieved December 9, 2021, from https://outrightdigitalmedia.com/qa/quick-answer-how-much-should-i-charge-for-designing-clothes.html. 
+** How long does it take to manufacture custom clothing? Intrepid Sourcing & Services. (2021, December 3). Retrieved December 9, 2021, from https://intrepidsourcing.com/trade-wiki/how-long-does-it-take-to-manufacture-custom-clothing/.
 
-Stearns, L., Findlater, L., & Froehlich, J. E. (2018, October 8). Applying Transfer Learning to Recognize Clothing Patterns Using a Finger-Mounted Camera. 
+** Quick Answer: How Much Should I Charge For Designing Clothes? Outrightdigitalmedia.com. (n.d.). Retrieved December 9, 2021, from https://outrightdigitalmedia.com/qa/quick-answer-how-much-should-i-charge-for-designing-clothes.html. 
+
+** Stearns, L., Findlater, L., & Froehlich, J. E. (2018, October 8). Applying Transfer Learning to Recognize Clothing Patterns Using a Finger-Mounted Camera. 
 
 * Model Sources:
-Iglovikov, Vladimir. “Ternaus/cloths_segmentation: Code for Binary Segmentation of Cloths.” Code for Binary Segmentation of Various Cloths, GitHub, https://github.com/ternaus/cloths_segmentation. 
 
-“DCGAN Tutorial.” DCGAN Tutorial - PyTorch Tutorials 1.10.1+cu102 Documentation, PyTorch, https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html.
+** Iglovikov, Vladimir. “Ternaus/cloths_segmentation: Code for Binary Segmentation of Cloths.” Code for Binary Segmentation of Various Cloths, GitHub, https://github.com/ternaus/cloths_segmentation. 
+
+** “DCGAN Tutorial.” DCGAN Tutorial - PyTorch Tutorials 1.10.1+cu102 Documentation, PyTorch, https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html.
 
 * Data Sources:
-lstearns86. (n.d.). Lstearns86/clothing-pattern-dataset: A large dataset containing images of clothing patterns. GitHub. Retrieved December 1, 2021, from https://github.com/lstearns86/clothing-pattern-dataset. 
 
-Additional patterns from web-scraping the following sites:
+** lstearns86. (n.d.). Lstearns86/clothing-pattern-dataset: A large dataset containing images of clothing patterns. GitHub. Retrieved December 1, 2021, from https://github.com/lstearns86/clothing-pattern-dataset. 
+
+** Additional patterns from web-scraping the following sites:
 Fashion Fabrics Club, https://www.fashionfabricsclub.com
 Online Fabric Store, https://www.onlinefabricstore.com
 
