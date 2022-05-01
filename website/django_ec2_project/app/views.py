@@ -4,6 +4,12 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from .forms import *
 from .generator import *
+from PIL import Image
+from io import BytesIO
+from django.http import HttpResponse
+import base64
+from django.http import JsonResponse
+
 
 def home(request):
     '''
@@ -29,26 +35,25 @@ def generator(request):
             width = int(request.POST.get('width'))
             height = int(request.POST.get('height'))
             pattern = request.POST.get('pattern')
+            img = request.POST.get('img')
             # If downloading pattern, grab presaved pattern at ../django_ec2_project/static/outputs/download.jpg 
             # and resize to user specifications
             if content == 'pattern':
-                image = Image.open('../django_ec2_project/static/outputs/download.jpg')
-                if file_type == 'PNG':
-                    resized_image = image.resize((width, height))
-                    resized_image.save('../django_ec2_project/static/outputs/download.png')
-                if file_type == 'JPG':
-                    resized_image = image.resize((width, height))
-                    resized_image.save('../django_ec2_project/static/outputs/download.jpg')
+                image = Image.open(pattern)
             # If downloading item, grab presaved item at ../django_ec2_project/static/outputs/display_image.jpg, 
             # resize to user specifications and resave as download.jpg/png
             elif content == 'item':
-                image = Image.open('../django_ec2_project/static/outputs/display_image.jpg')
-                if file_type == 'PNG':
-                    resized_image = image.resize((width, height))
-                    resized_image.save('../django_ec2_project/static/outputs/download.png')
-                if file_type == 'JPG':
-                    resized_image = image.resize((width, height))
-                    resized_image.save('../django_ec2_project/static/outputs/download.jpg')
+                image = Image.open(BytesIO(base64.b64decode(img)))
+            if file_type == 'PNG':
+                resized_image = image.resize((width, height))
+                img_byte_arr = BytesIO()
+                resized_image.save(img_byte_arr, format='PNG')
+                return HttpResponse(base64.b64encode(img_byte_arr.getvalue()), "image/png")
+            elif file_type == 'JPG':
+                resized_image = image.resize((width, height))
+                img_byte_arr = BytesIO()
+                resized_image.save(img_byte_arr, format='JPEG')
+                return HttpResponse(base64.b64encode(img_byte_arr.getvalue()), "image/jpeg")
         # Handle pattern generation
         else:
             download_form = DownloadForm()
@@ -69,7 +74,7 @@ def generator(request):
                 selected_style_image = '{}'.format(pattern)
 
                 # Call function to load pattern
-                stl_img = load_image(selected_style_image, 'stl')
+                stl_img, random_pattern = load_image(selected_style_image, 'stl')
 
                 # Call function to resize the pattern image to match with the shape of the item image
                 stl_img = resize_image(obj_img, stl_img)
@@ -81,7 +86,14 @@ def generator(request):
                 transform_image(obj_img, contour_image, stl_img)
 
                 # Save the image
-                save_image(obj_img, 'display_image')
+                img_byte_arr = BytesIO()
+                obj_img = Image.fromarray(obj_img)
+                obj_img.save(img_byte_arr, format='PNG')
+                response = {'item': base64.b64encode(img_byte_arr.getvalue()).decode(), 'pattern': random_pattern}
+
+                return JsonResponse(response)
+
+                #save_image(obj_img, 'display_image')
             else:
                 pattern_form = PatternGeneratorForm()
 

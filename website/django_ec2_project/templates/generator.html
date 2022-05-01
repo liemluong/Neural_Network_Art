@@ -118,13 +118,13 @@
           },
           complete: function(){
             $( ".spinner-border" ).remove();
-            window.PATTERN = $("input[name=pattern]:checked").val();
             $('#generator-form')[0].reset();
           },
           success: function( data ) 
           {
-            var d = new Date();
-            $( ".output" ).append( "<img id='loadingImage' src='/static/outputs/display_image.jpg?_=" + d.getMilliseconds() + "'/>" );
+            window.PATTERN = data.pattern
+            var src = "data:image/png;base64," + data.item;
+            $( ".output" ).append( "<img id='loadingImage' src='" + src + "'/>" );
           }
        })
     } else {
@@ -143,17 +143,13 @@
           content: $('#id_content').find(":selected").text(),
           width: $("input[name=width]").val(),
           height: $("input[name=height]").val(),
-          pattern: PATTERN,
+          pattern: window.PATTERN,
+          img: $('#loadingImage').attr('src').substring($('#loadingImage').attr('src').indexOf(',') + 1),
         },
         success: function( data ) 
         {
-          file_type = $('#id_file_type').find(":selected").text();
-          var d = new Date();
-          if (file_type == 'PNG') {
-            downloadImage('/static/outputs/download.png');
-          } else if (file_type == 'JPG') {
-            downloadImage('/static/outputs/download.jpg');
-          }
+          var imgSrc = "data:image/png;base64," + data;
+          downloadImage(imgSrc);
           $('#download-form')[0].reset();
         }
      })
