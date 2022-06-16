@@ -1,16 +1,14 @@
 # AI Fashion
-Authors: Aaliyah Hänni, Dwight Sablan, Liem Luong, Vanessa Joy Hsu
+Authors: Aaliyah Hänni, Liem Luong, Vanessa Joy Hsu
 
-Sponsor: Tatiana Teppoeva
+Sponsor: Dr. Tatiana Teppoeva, Sr. Data & Applied Scientist at Microsoft
 
 ![](/Images/Website_Image.png?raw=true "Header pic")
 
-### Introduction
-Art and data science - on the surface it looks like there is no correlation between the two fields. Fashion and neural networks - the relationship between the two may not be clear. Travel back in time, the history of digital art and technology started in the ‘60s. In the old days, there were challenges with limited computing resources and the power to blend art and AI for a meaningful result. Any accomplishment at that time was considered a significant success in the art field. The intersection of art and data science has gained more popularity in recent years. In reality, art and fashion are the inspiration for people to come up with new pieces of art. Advanced machine learning in the data science field enables creativity to make this process more efficient and more accessible to the broader audience.
+### About
+Generative adversarial networks (GANs) have been successfully used for various forms of image generation - including but not limited to photograph generation, text-to-image translation, and photograph editing. Our project aims to apply GANs to generate textile patterns in order to aid and inspire those who wish to create fashion items in physical and virtual worlds. GANs allow us to use two competing neural networks - a generator and a discriminator - to generate new synthetic patterns that can pass for real ones. 
 
-In the fashion industry there is constant demand for new and interesting design patterns, which can often be expensive and time consuming to create. Fashion designers are bound by their own internal biases and face limitations on the level of creativity and in-demand fashion that they can create within a given timeframe.
-
-With advances in deep learning, neural networks can be used to alleviate some problems in this field by improving the level of creativity in design for both quantity and quality outputs. In this work, we implement a neural network model to generate new textile patterns for many fashion items. Our solutions and findings could be easily used by the non-tech savvy and will make designs more accessible for the broader audience.
+In addition to pattern generating neural networks, we have created a platform in which users may test out different AI generated patterns on pre-selected fashion items or in photos of their own. This application utilizes a pre-trained object detection model that has been modified to apply patterns directly onto fashion items. This project serves as a proof of concept for how AI can be applied to enhance work in this specific area of fashion.
 
 ### Data Pipeline
 We will be using a dataset containing images of clothing patterns from a public github repository (https://github.com/lstearns86/clothing-pattern-dataset). This dataset is free to use without restriction. It’s available to us in CSV format. In addition to the classes and images, the dataset comes with 8 other features: original width, original height, crop X, crop Y, crop width, crop height, and scales. These features will be used to reconstruct the images in the dataset. Also, additional patterns are collected from web-scraping the following sites: 
@@ -50,9 +48,22 @@ Here is one sample of the final outputs we get from the application.
 ![](/Images/sample_result.JPG?raw=true "Result pic")
 
 ### Website 
-We create a website that will allow users to interact with it. The first stage of this website will focus on pattern generation. We will allow users to customize their design preferences (e.g. stripes, florals) and output a pattern based on their inputs. They will be able to download the pattern as an image file to their own devices, and use it as they wish.
+Website: [http://ec2-52-43-157-77.us-west-2.compute.amazonaws.com:8000/generator](www.aifashion.link)
 
-### Cited Sources
+The AI Fashion website allows users to interact with the art generator and application. The user selects a pattern type from the options (e.g floral), the network generates an image of the selected pattern, and then the user either selects a default fashion item or uploads a picture of themselves. The final combination is then presented and the pattern or complete image can be down loaded. 
+
+To run the django application locally, download the git repository and navigate to the folder /website/django_ec2_project. Then install requirements by running the following command:
+```
+python -m pip install -r requirements.txt
+```
+
+To run the django application locally, use the command: 
+
+```
+python manage.py runserver
+```
+
+### References
 * Reading Sources:
   * How long does it take to manufacture custom clothing? Intrepid Sourcing & Services. (2021, December 3). Retrieved December 9, 2021, from https://intrepidsourcing.com/trade-wiki/how-long-does-it-take-to-manufacture-custom-clothing/.
 
