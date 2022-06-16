@@ -3,7 +3,7 @@ Authors: Aaliyah Hänni, Liem Luong, Vanessa Joy Hsu
 
 Sponsor: Dr. Tatiana Teppoeva, Sr. Data & Applied Scientist at Microsoft
 
-![](/Images/Website_Image.png?raw=true "Header pic")
+![](/Images/website.jpg?raw=true "Header pic")
 
 ### About
 Generative adversarial networks (GANs) have been successfully used for various forms of image generation - including but not limited to photograph generation, text-to-image translation, and photograph editing. Our project aims to apply GANs to generate textile patterns in order to aid and inspire those who wish to create fashion items in physical and virtual worlds. GANs allow us to use two competing neural networks - a generator and a discriminator - to generate new synthetic patterns that can pass for real ones. 
@@ -17,7 +17,7 @@ We will be using a dataset containing images of clothing patterns from a public 
 
 The training datasets for DCGAN model are segregated into one of the 11 categories. These images are cleaned and standardized to the same height and width (224 x 224 pixels).
 
-![](/Images/dataset_categories.JPG?raw=true "Dataset pic")
+![](/Images/patterns.jpg?raw=true "Dataset pic")
 
 ### Technology Framework
 * PyTorch (back-end model)
@@ -45,10 +45,12 @@ With the component 2 (Segmentation & Masking), we leverage the pre-trained model
 
 ### Sample Output
 Here is one sample of the final outputs we get from the application.
-![](/Images/sample_result.JPG?raw=true "Result pic")
+![](/Images/howitworks.jpg?raw=true "Result pic")
 
 ### Website 
 Website: [http://ec2-52-43-157-77.us-west-2.compute.amazonaws.com:8000/generator](www.aifashion.link)
+
+![](/Images/AI_Fashion_Longer_Short_Film_AdobeExpress.gif?raw=true "Result pic")
 
 The AI Fashion website allows users to interact with the art generator and application. The user selects a pattern type from the options (e.g floral), the network generates an image of the selected pattern, and then the user either selects a default fashion item or uploads a picture of themselves. The final combination is then presented and the pattern or complete image can be down loaded. 
 
