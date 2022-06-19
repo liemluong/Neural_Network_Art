@@ -1,0 +1,1 @@
+This is the python code for component 1. This code generate the pattern using DCGAN model. It is best to run it on Google Colab

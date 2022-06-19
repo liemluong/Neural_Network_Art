@@ -1,1 +1,0 @@
-This is the python code of DCGAN model. It is best to run it on Google Colab
