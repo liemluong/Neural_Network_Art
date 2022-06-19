@@ -29,7 +29,7 @@ We consider two popular deep learning frameworks, TensorFlow and PyTorch. Ultima
 ### Architecture
 Our core architecture design includes two main components: Fabric Pattern Generator (component 1) and Segmentation & Masking (component 2). 
 
-![](/Images/Project_Architecture.JPG?raw=true "Project architecture pic")
+![](/Images/AI_Fashion_Architecture.JPG?raw=true "Project architecture pic")
 
 In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various textile pattern datasets. The output of this component 1 will be a neural network generated image input for component 2. In component 2, another pre-trained neural network model will perform image segmentation of clothing patterns and mask the new pattern over the fashion items to produce a result.
 
