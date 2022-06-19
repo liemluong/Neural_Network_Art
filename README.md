@@ -50,7 +50,7 @@ The generator takes an input of low resolution image and then pass it through mu
 The main objective of the discriminator is to discriminate between real HR images and generated SR images. Its architecture in the paper is similar to DCGAN by using LeakyReLu as activation function. The initial starting convolutional size is 64 x 64, after each VBL block it is multiplied by 2 until we reach the 8x upscaling factor of 512 x 512. The result of 512 feature maps are followed by two convoluted and LeakyReLu and a sigmoid activation function. The sigmoid activation function in the end is used to obtain a probability for classification action
 
 
-Component 3: Segmentation and Masking model, we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. We refer the sample from Vladimir Iglovikov (Binary Segmentation of Cloths) to develop our component 2.
+Component 3: Segmentation and Masking model, we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. We refer the sample from Vladimir Iglovikov (Binary Segmentation of Cloths) to develop our component 3.
 
 ### Sample Output
 Here is one sample of the final outputs we get from the application.
