@@ -27,7 +27,7 @@ The training datasets for DCGAN model are segregated into one of the 11 categori
 We consider two popular deep learning frameworks, TensorFlow and PyTorch. Ultimately, we decided to use PyTorch for our project given several considerations. Briefly, PyTorch is a popular deep learning framework that was developed by Facebook’s AI Research lab (FAIR) in 2016. It is an open source library for the Python programming language used to develop deep learning applications in computer vision and natural language processing. PyTorch has grown in popularity for its simplicity, ease of use, efficient memory usage, and flexibility. One of the main reasons we chose to use this library over TensorFlow is that it is integrated well with the Python language whereas TensorFlow is less of a pythonic framework and more of a new language. Additionally, performance in PyTorch is optimized automatically via parallelism where the intensive computational work during the training process is distributed among multiple CPU or GPU cores.
 
 ### Architecture
-Our core architecture design includes two main components: Fabric Pattern Generator (component 1) and Segmentation & Masking (component 2). 
+Our core architecture design includes three main components: Fabric Pattern Generator Model (component 1), Resolution Enhancement Model (component 2) and Segmentation & Masking Model (component 3). 
 
 ![](/Images/AI_Fashion_Architecture.JPG?raw=true "Project architecture pic")
 
