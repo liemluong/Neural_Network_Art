@@ -76,7 +76,6 @@ python manage.py runserver
 
 ### References
 We also want to give a quick overview of all the great resources that we used to develop this work. Our project is built upon the great works of many people before us in this field. 
-![](/Images/reference_cite.jpg?raw=true "reference citation pic")
-
+![](/Images/reference_cite.JPG?raw=true "reference citation pic")
 
 
