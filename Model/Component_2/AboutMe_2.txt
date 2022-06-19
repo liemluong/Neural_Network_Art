@@ -1,0 +1,1 @@
+This is the component 2 where it takes the raw images from component 1 and improve the resolution to output an image with super resolution.

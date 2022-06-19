@@ -1,1 +1,0 @@
-This is the component 3 where it takes the super resolution input image from component 2 model and style it on the object image (fashion clothe, pant) over the contour layer. 
