@@ -1,0 +1,1 @@
+This is component 3 of the project where it takes the super resolution images from the component 2 model and applies it on the fashion item.
