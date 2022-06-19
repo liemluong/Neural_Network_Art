@@ -31,7 +31,7 @@ Our core architecture design includes three main components: Fabric Pattern Gene
 
 ![](/Images/AI_Fashion_Architecture.JPG?raw=true "Project architecture pic")
 
-In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various textile pattern datasets. The output of this component 1 will be a neural network generated image input for component 2. In component 2, another pre-trained neural network model will perform image segmentation of clothing patterns and mask the new pattern over the fashion items to produce a result.
+In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various textile pattern datasets. The output of this component 1 will be a neural network generated image. This output will be converted into a super resolution in component 2 by the Super Resolution Generative Adversarial Network (SRGAN). In component 3, another pre-trained neural network model will perform image segmentation of clothing patterns and mask the new pattern over the fashion items to produce a result.
 
 ### Model 
 DCGAN Model is the architecture being used for fabric pattern generation in this project. The advantage of DCGAN is its continuous improvement between the Generator and Discriminator Networks by improving the performance while reducing the loss of both networks to produce the best fake images. Below is the neural network structure of the Generator Network and Discriminator Network
