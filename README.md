@@ -34,14 +34,23 @@ Our core architecture design includes three main components: Fabric Pattern Gene
 In component 1, we apply the Deep Convolutional Generative Adversarial Network (DCGAN) by training with various textile pattern datasets. The output of this component 1 will be a neural network generated image. This output will be converted into a super resolution in component 2 by the Super Resolution Generative Adversarial Network (SRGAN). In component 3, another pre-trained neural network model will perform image segmentation of clothing patterns and mask the new pattern over the fashion items to produce a result.
 
 ### Model 
-DCGAN Model is the architecture being used for fabric pattern generation in this project. The advantage of DCGAN is its continuous improvement between the Generator and Discriminator Networks by improving the performance while reducing the loss of both networks to produce the best fake images. Below is the neural network structure of the Generator Network and Discriminator Network
+Component 1: DCGAN Model is the architecture being used for fabric pattern generation in this project. The advantage of DCGAN is its continuous improvement between the Generator and Discriminator Networks by improving the performance while reducing the loss of both networks to produce the best fake images. Below is the neural network structure of the Generator Network and Discriminator Network of DCGAN
 
 ![](/Images/DCGAN_architecture.JPG?raw=true "DCGAN architecture pic")
 
 Improving the model performance and reducing the loss are our objectives. We use the default Adam optimizer and Binary Cross Entropy loss from PyTorch.
 ![](/Images/loss_function.JPG?raw=true "Loss function pic")
 
-With the component 2 (Segmentation & Masking), we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. We refer the sample from Vladimir Iglovikov (Binary Segmentation of Cloths) to develop our component 2.
+Component 2: SRGAN Model is the architecture being used for resolution enhancment in this project. Below is the structure of the Generator Network and Discriminator Network of SRGAN
+
+![](/Images/SRGAN_architecture.JPG?raw=true "SRGAN architecture pic")
+
+The generator takes an input of low resolution image and then pass it through multiple layer of residual blocks instead of deep convolution networks because residual networks are easy to train and generate better results due to the fact that residual network has a type of connections called skip connections among the residual blocks. Each residual block contains two convolutional layers with small 3x3 kernels and 64 feature maps followed by a batch normalization and a Parametric ReLu as the activation function,The reason for choosing Parametric ReLu is because it is one of the best non-linear functions for this particular task of mapping low-resolution images to high-resolution images. The generator tries to upsample the image from low resolution to super resolution.
+
+The main objective of the discriminator is to discriminate between real HR images and generated SR images. Its architecture in the paper is similar to DCGAN by using LeakyReLu as activation function. The initial starting convolutional size is 64 x 64, after each VBL block it is multiplied by 2 until we reach the 8x upscaling factor of 512 x 512. The result of 512 feature maps are followed by two convoluted and LeakyReLu and a sigmoid activation function. The sigmoid activation function in the end is used to obtain a probability for classification action
+
+
+Component 3: Segmentation and Masking model, we leverage the pre-trained model (Unet_2020-10-30). This model weights for clothe segmentation were trained over the Kaggle dataset - iMaterialist (Fashion) 2019 at FGVC6. We refer the sample from Vladimir Iglovikov (Binary Segmentation of Cloths) to develop our component 2.
 
 ### Sample Output
 Here is one sample of the final outputs we get from the application.
