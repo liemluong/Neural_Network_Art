@@ -15,7 +15,7 @@ We will be using a dataset containing images of clothing patterns from a public 
 * Fashion Fabrics Club, https://www.fashionfabricsclub.com
 * Online Fabric Store, https://www.onlinefabricstore.com 
 
-The training datasets for DCGAN model are segregated into one of the 11 categories. These images are cleaned and standardized to the same height and width (224 x 224 pixels).
+The training datasets for DCGAN model are segregated into one of the 10 categories. These images are cleaned and standardized to the same height and width (224 x 224 pixels).
 
 ![](/Images/patterns.jpg?raw=true "Dataset pic")
 
